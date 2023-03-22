@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 40px;
+
+  label {
+    color: white;
+  }
+
+  input {
+    border: 3px solid goldenrod;
+    padding: 0.3rem;
+    margin-left: 1rem;
+    width: 300px;
+    // color: white;
+
+    ::placeholder {
+      color: red;
+      opacity: 0.5;
+    }
+  }
+}
+.wrapper {
+  margin-top: 1rem;
+}
