@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-function Filters() {
+function Filters({ search }) {
   //state
-  const [search, setSearch] = useState("");
+  const [characterName, setCharacterName] = useState("");
+
+  useEffect(() => {
+    search(characterName);
+  }, [characterName]);
 
   //handlers
-
   const handleFilter = (ev) => {
-    setSearch(ev.target.value);
+    setCharacterName(ev.target.value);
   };
   //jsx
   return (
@@ -21,7 +24,7 @@ function Filters() {
           id='searchCharacter'
           placeholder='ej:Harry'
           onInput={handleFilter}
-          value={search}
+          value={characterName}
         />
       </form>
     </div>
