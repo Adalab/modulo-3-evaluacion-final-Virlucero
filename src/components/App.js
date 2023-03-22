@@ -5,6 +5,7 @@
 // - Sass
 import "../styles/App.scss";
 // - Imágenes
+import Logo from "../images/logo.png";
 
 /* SECCIÓN DEL COMPONENTE */
 function App() {
@@ -17,7 +18,13 @@ function App() {
   /* FUNCIONES Y VARIABLES AUXILIARES PARA PINTAR EL HTML */
 
   /* HTML */
-  return <div className='App'>{/* Aquí va el HTML */}</div>;
+  return (
+    <div className='App'>
+      {/* Aquí va el HTML */}
+
+      <img src={Logo} />
+    </div>
+  );
 }
 
 /* PROP-TYPES */
