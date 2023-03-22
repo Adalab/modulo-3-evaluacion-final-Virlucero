@@ -14,25 +14,28 @@ import CharacterCard from "./CharacterCard";
 /* SECCIÓN DEL COMPONENTE */
 function App() {
   /* VARIABLES ESTADO (DATOS) */
-  const [storedCharacters, setStoredCharacters] = useState([]);
   const [allCharacters, setAllCharacters] = useState([]);
+  const [shownCharacters, setShownCharacters] = useState([]);
 
   /* EFECTOS (código cuando carga la página) */
   useEffect(() => {
     api.allCharacters().then((data) => {
+      setShownCharacters(data);
       setAllCharacters(data);
-      setStoredCharacters(data);
     });
   }, []);
 
   /* FUNCIONES HANDLER */
-  const handleFilter = (name) => {
-    console.log("filtramos por", name);
-    const filteredCharacters = storedCharacters.filter((eachCharacter) =>
-      eachCharacter.name.toLowerCase().includes(name.toLowerCase)
+  const handleFilterByName = (name) => {
+    const filteredCharacters = allCharacters.filter((eachCharacter) =>
+      eachCharacter.name.toLowerCase().includes(name.toLowerCase())
     );
-    console.log(filteredCharacters);
-    setAllCharacters(filteredCharacters);
+    setShownCharacters(filteredCharacters);
+  };
+  const handleSearchByHouse = (house) => {
+    api.searchByHouse(house).then((data) => {
+      setShownCharacters(data);
+    });
   };
 
   /* FUNCIONES Y VARIABLES AUXILIARES PARA PINTAR EL HTML */
@@ -41,14 +44,17 @@ function App() {
   return (
     <div className='app'>
       {/* Aquí va el HTML */}
-
       <img src={Logo} />
-      <Filters search={handleFilter} />
+      <Filters
+        searchByName={handleFilterByName}
+        searchByHouse={handleSearchByHouse}
+      />
 
-      {allCharacters.map((eachCharacter) => {
-        console.log(eachCharacter);
-        return <CharacterCard characterData={eachCharacter} />;
-      })}
+      <div className='character-list'>
+        {shownCharacters.map((eachCharacter) => {
+          return <CharacterCard characterData={eachCharacter} />;
+        })}
+      </div>
     </div>
   );
 }
