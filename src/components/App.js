@@ -2,6 +2,7 @@
 
 // - De React
 // - Nuestros
+import Filters from "./Filters";
 // - Sass
 import "../styles/App.scss";
 // - Imágenes
@@ -23,6 +24,7 @@ function App() {
       {/* Aquí va el HTML */}
 
       <img src={Logo} />
+      <Filters />
     </div>
   );
 }
