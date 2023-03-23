@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "../styles/layout/CharacterCard.scss";
+
 // hago un ternario donde digo que si el character no tiene imagen, hago un placeholder
 
 function CharacterCard({ characterData }) {

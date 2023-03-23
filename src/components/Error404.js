@@ -9,23 +9,8 @@ const Error404 = () => {
       <div className='container'>
         <h1 className='main__error__title'>404</h1>
         <p className='main__error__text'>
-          ¡Vaya... Esta página se ha ido a buscar otros proyectos molones que
-          todavía no existen!
+          ¡Vaya... El personaje que buscas no existe"
         </p>
-        <span className='main__error__span'>
-          Error 404: Lo sentimos, no hemos podido encontrar la página que buscas
-        </span>
-        <p className='main__error__links__paragraph'>
-          Aquí tienes algunos enlaces que pueden servirte de ayuda:
-        </p>
-        <div className='main__error__container'>
-          <Link className='main__error__container__home' to='/'>
-            Inicio
-          </Link>
-          <Link className='main__error__container__new-project' to='/create'>
-            Nuevo proyecto
-          </Link>
-        </div>
       </div>
     </main>
   );

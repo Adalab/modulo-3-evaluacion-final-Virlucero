@@ -19,7 +19,7 @@ function App() {
   return (
     <div className='app'>
       {/* Aquí va el HTML */}
-      <img src={Logo} />
+      <img src={Logo} alt='logo' />
 
       <Routes>
         <Route path='/' element={<Landing />}></Route>
