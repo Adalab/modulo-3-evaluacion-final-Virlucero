@@ -4,6 +4,7 @@ import api from "../services/api";
 import "../styles/layout/CharacterDetails.scss";
 import HeartIcon from "../images/heartbeat.png";
 import DeathIcon from "../images/memorial.png";
+import { Link } from "react-router-dom";
 
 function CharacterDetail() {
   // codigo para obtener el id leyendolo de la ruta
@@ -40,9 +41,9 @@ function CharacterDetail() {
     <div className='main'>
       {characterDetails && (
         <div className='character-detail-card'>
-          <a className='button' href='/'>
+          <Link to='/' className='button'>
             {"< Volver"}
-          </a>
+          </Link>
           {characterDetails.image ? (
             <img
               src={characterDetails.image}
