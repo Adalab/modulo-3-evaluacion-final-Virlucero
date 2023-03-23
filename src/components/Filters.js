@@ -40,7 +40,11 @@ function Filters({ searchByName, searchByHouse }) {
       </div>
       <div className='wrapper'>
         <label htmlFor='searchHouse'>Selecccionar la casa: </label>
-        <select id='searchHouse' onChange={handleSelectHouse} value={houseName}>
+        <select
+          id='searchHouse'
+          className='selection'
+          onChange={handleSelectHouse}
+          value={houseName}>
           <option value='all'>All</option>
           <option value='gryffindor'>Gryffindor</option>
           <option value='hufflepuff'>Hufflepuff</option>
