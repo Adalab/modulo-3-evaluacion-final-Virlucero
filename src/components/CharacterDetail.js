@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { matchPath, useLocation } from "react-router";
 import api from "../services/api";
 import "../styles/layout/CharacterDetails.scss";
+import HeartIcon from "../images/heartbeat.png";
+import DeathIcon from "../images/memorial.png";
 
 function CharacterDetail() {
   // codigo para obtener el id leyendolo de la ruta
@@ -38,6 +40,9 @@ function CharacterDetail() {
     <div className='main'>
       {characterDetails && (
         <div className='character-detail-card'>
+          <a className='button' href='/'>
+            {"< Volver"}
+          </a>
           {characterDetails.image ? (
             <img src={characterDetails.image} alt={characterDetails.name} />
           ) : (
@@ -48,7 +53,20 @@ function CharacterDetail() {
 
           <div className='details'>
             <p>{characterDetails.name}</p>
-            <p>Estatus: {characterDetails.alive ? "Vivo" : "muerto"}</p>
+            <p>
+              Estatus:{" "}
+              {characterDetails.alive ? (
+                <>
+                  {"Vivo"}{" "}
+                  <img src={HeartIcon} alt='heartbeat' width={20} height={20} />
+                </>
+              ) : (
+                <>
+                  {"Muerto"}{" "}
+                  <img src={DeathIcon} alt='death' width={20} height={20} />
+                </>
+              )}
+            </p>
             <p>
               Especie:
               {characterDetails.species === "human" ? "Humano" : "Marciano"}
