@@ -3,9 +3,11 @@
   background-color: grey;
   height: 100%;
   text-align: center;
+  padding-bottom: 5rem;
 }
 
 .character-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 2rem;
 }

@@ -44,10 +44,15 @@ function CharacterDetail() {
             {"< Volver"}
           </a>
           {characterDetails.image ? (
-            <img src={characterDetails.image} alt={characterDetails.name} />
+            <img
+              src={characterDetails.image}
+              alt={characterDetails.name}
+              className='img-wrapper'
+            />
           ) : (
             <img
               src={`https://via.placeholder.com/210x295/ffffff/666666/?text=${characterDetails.name}`}
+              alt='charaters'
             />
           )}
 

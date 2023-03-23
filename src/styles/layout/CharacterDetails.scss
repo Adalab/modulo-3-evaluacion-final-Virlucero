@@ -6,7 +6,8 @@
   display: flex;
   justify-content: flex-start;
   padding: 1rem;
-  width: 400px;
+  width: 500px;
+
   margin-left: auto;
   margin-right: auto;
   align-items: center;
@@ -30,4 +31,8 @@
   position: absolute;
   top: -30px;
   right: 0;
+}
+
+.img-wrapper {
+  max-width: 250px;
 }

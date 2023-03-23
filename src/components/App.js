@@ -5,10 +5,11 @@ import { Route, Routes } from "react-router-dom";
 // - Nuestros
 import Landing from "./Landing";
 import CharacterDetail from "./CharacterDetail";
+import Error404 from "./Error404";
 
 // - Sass
 import "../styles/App.scss";
-import Error404 from "./Error404";
+
 // - Imágenes
 import Logo from "../images/logo.png";
 
@@ -29,8 +30,6 @@ function App() {
     </div>
   );
 }
-
-/* PROP-TYPES */
 
 /* EXPORT DEL COMPONENTE */
 export default App;
